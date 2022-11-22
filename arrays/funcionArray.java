@@ -81,5 +81,38 @@ public class funcionArray {
         int total = suma /arrayTamaño;
         return total;
     }
+
+    //Dice si un número está o no dentro de un array
+    //
+    //@param x, array
+    //@param y, numero que se quiere confirmar
+    //@return verdadero o falso
+
+    public static boolean estaEnArrayInt(int[] x, int y) {
+
+        for (int n : x) {
+            if (n == y) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //Busca un número en un array y devuelve la posición (el índice) en la que se encuentra
+    //
+    //@param x, array
+    //@param y, numero a buscar
+    //@return posicion del numero "y"
+
+    public static int posicionEnArray(int[] x, int y) {
+
+        for(int i=0; i < x.length; i++) {
+            
+            if (x[i] == y){
+                return i;
+            }
+        }
+    return -1;
+    }
 }
 
