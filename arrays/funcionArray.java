@@ -42,9 +42,44 @@ public class funcionArray {
                 minimo = n;
             }
         }
-        return n;
+        return minimo;
+    }
+
+    // Devuelve el máximo del array que se pasa como parámetro.
+    //
+    //@param x, array
+    //@return maximo del array
+
+    public static int maximoArrayInt(int[] x) {
+        
+        int maximo = Integer.MIN_VALUE;
+        
+        for (int n : x) {
+            if (n > maximo) {
+            maximo = n;
+            }
+        }
+    
+        return maximo;
+    }
+
+    //Devuelve la media del array que se pasa como parámetro
+    //
+    //@param x, array
+    //@return la media del array
+
+    public static int mediaArrayInt(int[] x) {
+
+        int arrayTamaño = 0;
+        int suma = 0;
+
+        for (int n : x) {
+            arrayTamaño ++;
+            suma=suma+n;
+        }
+
+        int total = suma /arrayTamaño;
+        return total;
     }
 }
-
-hoy yo ando rulai
 
