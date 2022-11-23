@@ -107,17 +107,13 @@ public class funcionArray {
     public static int posicionEnArray(int[] x, int y) {
 
         int contador=0;
-        int posicion=0;
         while(contador<x.length) {
             if(x[contador]==y){
-                posicion=contador;
+                return contador;
             }
             contador++;
         }
-        if(posicion!=y) {
-            return -1;
-        }
-        return posicion;
+        return -1;
     }
 
     //Le da la vuelta a un array
@@ -126,19 +122,23 @@ public class funcionArray {
     //@return el array dado la vuelta
     public static int[] volteaArrayInt(int[] x) {
         int longitud = x.length;
-      //  int contador = 0;
-        int[] array = new int[longitud];
+        int contador = 0;
         int[] vuelta = new int[longitud];
 
-        for(int i=0; i<longitud;i++) {
-            array[i]=x[i];
-        }
-        for(int i=longitud; i>0; i--) {
-        vuelta[i]=x[i];
+        for(int i=longitud-1; i>0; i--) {
+            vuelta[contador]=x[i];
+            contador++;
        // array[contador]=x[i];
        //     contador++;
-       // }
-        return array;
+        }
+        return vuelta;
     }
+
+    //Rota n posiciones a la derecha los números de un array.
+    //
+    //@param x, array
+    //@param n, cantidad de posiciones que rota a la derecha
+    //@return el array con las posiciones rotadas a la derecha
+    public static int[] rotaDerechaArrayInt(int[] x, int n) {}
 }
 
