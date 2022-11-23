@@ -128,8 +128,6 @@ public class funcionArray {
         for(int i=longitud-1; i>0; i--) {
             vuelta[contador]=x[i];
             contador++;
-       // array[contador]=x[i];
-       //     contador++;
         }
         return vuelta;
     }
