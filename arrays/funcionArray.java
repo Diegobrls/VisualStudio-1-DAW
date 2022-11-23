@@ -15,7 +15,7 @@ public class funcionArray {
     //Genera un array de tamaño n con números aleatorios cuyo intervalo 
     //(mínimo y máximo) se indica como parámetro.
     //
-    //@param n, tamañp del array
+    //@param n, tamaño del array
     //@param x, minimo numero aleatorio
     //@param y, maximo numero aleatorio
     //@return array de tamaño n y numeros aletorios
@@ -106,13 +106,39 @@ public class funcionArray {
 
     public static int posicionEnArray(int[] x, int y) {
 
-        for(int i=0; i < x.length; i++) {
-            
-            if (x[i] == y){
-                return i;
+        int contador=0;
+        int posicion=0;
+        while(contador<x.length) {
+            if(x[contador]==y){
+                posicion=contador;
             }
+            contador++;
         }
-    return -1;
+        if(posicion!=y) {
+            return -1;
+        }
+        return posicion;
+    }
+
+    //Le da la vuelta a un array
+    //
+    //@param x, array
+    //@return el array dado la vuelta
+    public static int[] volteaArrayInt(int[] x) {
+        int longitud = x.length;
+      //  int contador = 0;
+        int[] array = new int[longitud];
+        int[] vuelta = new int[longitud];
+
+        for(int i=0; i<longitud;i++) {
+            array[i]=x[i];
+        }
+        for(int i=longitud; i>0; i--) {
+        vuelta[i]=x[i];
+       // array[contador]=x[i];
+       //     contador++;
+       // }
+        return array;
     }
 }
 

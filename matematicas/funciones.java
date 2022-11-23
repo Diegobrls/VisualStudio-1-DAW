@@ -158,6 +158,7 @@ public class funciones {
     }
 
     public static int trozoDeNumero(int numero, int detras, int delante) {
+        
         numero = quitaPorDetras(numero, detras);
         numero = quitaPorDelante(numero, delante);
 
