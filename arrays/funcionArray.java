@@ -132,11 +132,40 @@ public class funcionArray {
         return vuelta;
     }
 
-    //Rota n posiciones a la derecha los números de un array.
+    //Rota n posiciones a la derecha los números de un array
     //
     //@param x, array
     //@param n, cantidad de posiciones que rota a la derecha
     //@return el array con las posiciones rotadas a la derecha
-    public static int[] rotaDerechaArrayInt(int[] x, int n) {}
+    public static int[] rotaDerechaArrayInt(int[] x, int n){
+
+        int j = 0;
+        int longitud = x.length;
+        for(int i=0; i<n; i++){
+            for(j=longitud-1; j>0; j--) {
+                x[longitud]=x[longitud-1];
+                x[0]=x[longitud];
+            }
+        }
+        return x;
+    }
+
+    //Rota n posiciones a la izquierda los números de un array.
+    //
+    //@param x, array
+    //@param n, cantidad de posiciones que rota a la izquierda
+    //@return el array con las posiciones rotadas a la izquierda
+    public static int[] rotaIzquierdaArrayInt(int[] x, int n) {
+
+        int j = 0;
+        int longitud = x.length;
+        for(int i=0; i<n; i++) {
+            for(j=0; j<longitud-1; j++) {
+                x[j] = x[j + 1];
+                x[longitud] = x[0];
+            }
+        }
+        return x;
+    }
 }
 
