@@ -35,14 +35,14 @@ public class funcionArray {
 
     public static int minimoArrayInt(int[] x) {
         
-        int minimo = Integer.MAX_VALUE;
+        int min = Integer.MAX_VALUE;
     
-        for (int n : x) {
-            if (n < minimo) {
-                minimo = n;
+        for (int y : x) {
+            if (y < min) {
+                min = y;
             }
         }
-        return minimo;
+        return min;
     }
 
     // Devuelve el máximo del array que se pasa como parámetro.
@@ -52,15 +52,15 @@ public class funcionArray {
 
     public static int maximoArrayInt(int[] x) {
         
-        int maximo = Integer.MIN_VALUE;
+        int max = Integer.MIN_VALUE;
         
-        for (int n : x) {
-            if (n > maximo) {
-            maximo = n;
+        for (int y : x) {
+            if (y > max) {
+            max = y;
             }
         }
     
-        return maximo;
+        return max;
     }
 
     //Devuelve la media del array que se pasa como parámetro
@@ -137,15 +137,16 @@ public class funcionArray {
     //@param x, array
     //@param n, cantidad de posiciones que rota a la derecha
     //@return el array con las posiciones rotadas a la derecha
-    public static int[] rotaDerechaArrayInt(int[] x, int n){
+    public static int[] rotaDerechaArrayInt(int[] x, int n ){
 
-        int j = 0;
-        int longitud = x.length;
-        for(int i=0; i<n; i++){
-            for(j=longitud-1; j>0; j--) {
-                x[longitud]=x[longitud-1];
-                x[0]=x[longitud];
+        int largo = x.length;
+
+        for (int i=0; i<n; i++){
+            int y = x[largo - 1]; //ultimo numero
+            for (int j = largo - 2; j >= 0; j--) {
+                x[j + 1] = x[j];
             }
+            x[0] = y;
         }
         return x;
     }
@@ -157,13 +158,14 @@ public class funcionArray {
     //@return el array con las posiciones rotadas a la izquierda
     public static int[] rotaIzquierdaArrayInt(int[] x, int n) {
 
-        int j = 0;
-        int longitud = x.length;
+        int largo = x.length;
+
         for(int i=0; i<n; i++) {
-            for(j=0; j<longitud-1; j++) {
+            int y = x[0]; //primer numero
+            for(int j=0; j<largo-1; j++) {
                 x[j] = x[j + 1];
-                x[longitud] = x[0];
             }
+            x[largo-1] = y;
         }
         return x;
     }
