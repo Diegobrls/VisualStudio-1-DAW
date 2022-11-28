@@ -100,8 +100,8 @@ public class funcionArrayBilnt {
     // @param n, numero entero
     // @return confirma si el numero es punto de silla
     public static boolean esPuntoDeSilla(int[][] x, int n) {
-        int[] fila = filaDeArrayBiInt(x, n); //NO PILLA LAS FILAS
-        int[] columna = columnaDeArrayBiInt(x, n); //NO PILLA LAS COLUMNAS
+        int[] fila = filaDeArrayBiInt(x, n);
+        int[] columna = columnaDeArrayBiInt(x, n); 
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
 
@@ -110,7 +110,6 @@ public class funcionArrayBilnt {
                 min = y;
             }
         }
-        return min;
         for (int z : columna) {
             if (z > max) {
                 max = z;

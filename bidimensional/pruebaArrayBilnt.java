@@ -9,11 +9,11 @@ public class pruebaArrayBilnt{
         int m = 5;
         int max = 50;
         int min = 5;
-        int pos = 9;
-        int [][] matriz={{4,3,5,6,3},
-                        {1,6,7,4,2},
-                        {2,6,7,4,1},
-                        {4,7,8,4,1},
+        int pos = 2;
+        int [][] matriz={{9,8,5,8,4},
+                        {1,3,4,5,2},
+                        {5,6,7,7,6},
+                        {4,7,8,8,1},
                         {5,7,8,9,3}};
 
         System.out.println("Matriz generada aletoriamente: ");
@@ -31,6 +31,6 @@ public class pruebaArrayBilnt{
         System.out.println(Arrays.toString(funcionArrayBilnt.coordenadasEnArrayBiInt(matriz, pos)));
 
         System.out.println("¿Es el numero " + pos + " punto de silla? ");
-        System.out.println(Arrays.toString(funcionArrayBilnt.esPuntoDeSilla(matriz, pos))); 
+        System.out.println(funcionArrayBilnt.esPuntoDeSilla(matriz, pos)); 
     }
 }
