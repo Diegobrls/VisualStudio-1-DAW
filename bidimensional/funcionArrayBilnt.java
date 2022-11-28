@@ -1,5 +1,6 @@
 package bidimensional;
 
+
 /** funcionArrayBilnt
  *  biblioteca de funciones para arrays bidimensionales de números entero
  *
@@ -51,22 +52,75 @@ public class funcionArrayBilnt {
     //@param x, matriz
     //@param n, columna
     //@return columna j-esima del array "x"
-    public static int columnaDeArrayBiInt(int[][] x, int n) {
-        int[] array = new int [x.length];
-        int contador=0;
-        for (int i = 0; i < array.length; i++) {
-            contador++;
+    public static int[] columnaDeArrayBiInt(int[][] x, int n) {
+
+        int longitud = 0;
+        for (int i=0; i<x.length-1; i++) {
+            for (int j=0; j<x[i].length-1; j++) {
+                longitud=j; //halla la longitud de las columnas
+            } 
         }
-        return contador;
-        for (int i=0; i<x.length; i++) {
-            a=x[i];
-            if(a==n){
-                for (int j=0; j<x.length; j++) {
-                    array[j]=x[i][j];
+                int [] array = new int [longitud+2];
+
+        for (int i=0; i<x[0].length; i++ ) {
+            for (int j=0; j <x.length; j++) {
+                array[j]=x[j][n];
+            }
+        }
+        return array; 
+    }
+
+    // Devuelve la fila y la columna (en un array
+    // con dos elementos) de la primera ocurrencia de un número dentro de un
+    // array bidimensional. Si el número no se encuentra en el array, la función
+    // devuelve el array {-1, -1}.
+    //
+    // @param x, matriz
+    // @param n, numero entero
+    // @return array con la fila y la columna correspondiente a la posicion del numero "n"
+    // en la matriz "x"
+    public static int [] coordenadasEnArrayBiInt(int [][] x, int n) {
+        int array[]= new int [2]; //aqui se almacenarán la fila y la columna
+
+        for(int i=0; i<x.length; i++){
+            for(int j=0; j<x[i].length; j++){
+                if (x[i][j]==n){
+                    array[0]=i;
+                    array[1]=j;
                 }
             }
-            for (int j=0; j<x[i].length; j++) {
+        }
+        return array;
+    }
+
+    // Dice si un número es o no punto de silla, es decir, mínimo en su fila y 
+    // máximo en su columna.
+    //
+    // @param x, matriz
+    // @param n, numero entero
+    // @return confirma si el numero es punto de silla
+    public static boolean esPuntoDeSilla(int[][] x, int n) {
+        int[] fila = filaDeArrayBiInt(x, n); //NO PILLA LAS FILAS
+        int[] columna = columnaDeArrayBiInt(x, n); //NO PILLA LAS COLUMNAS
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+
+        for (int y : fila) {
+            if (y < min) {
+                min = y;
             }
+        }
+        return min;
+        for (int z : columna) {
+            if (z > max) {
+                max = z;
+            }
+        }
+        
+        if ((n==max)&&(n==min)){
+            return true;
+        } else {
+            return false;
         }
     }
 }
