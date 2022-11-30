@@ -8,6 +8,8 @@ public class pruebaDePrueba {
         int columnas = 0;
         int max = 0;
         int min = 0;
+        int numeroMayor=0;
+        int cuenta = 0 ;
 
     
         do{
@@ -44,6 +46,26 @@ public class pruebaDePrueba {
             }
         }
         System.out.println(Arrays.deepToString(matriz));
+        
+        for(int i=0; i<matriz.length; i++){
+            for(int j=0; j<matriz[i].length; j++){
+                if (matriz[i][j] > numeroMayor) {
+                    numeroMayor = matriz[i][j];
+                }
+            }
+        }
+
+        while(numeroMayor !=0) {
+            numeroMayor = numeroMayor/10;
+            cuenta++;
+        }
+        
+        for(int i=0; i<matriz.length; i++){
+            for(int j=0; j<matriz[i].length; j++){
+                System.out.print("|%" + cuenta + "d" + matriz[i][j]);
+                System.out.println("|");
+            }
+        }
     }
     
     public static boolean valorRepetido(int[][] matriz, int valor) {
